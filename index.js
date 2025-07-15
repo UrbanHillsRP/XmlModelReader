@@ -3,9 +3,8 @@ var convert = require('xml-js');
 const { program } = require('commander');
 program
   .option('-x, --xml <xmlFile>','Xml File to found modelName','xml.xml')
-  .option('-o, --out <outFile>','Txt File to put the list',`${Date.now()}.txt`);
-
-program.parse();
+  .option('-o, --out <outFile>','Txt File to put the list',`${Date.now()}.txt`)
+program.parse(process.argv);
 
 const options = program.opts();
 var xml = require('fs').readFileSync('./'+ options.xml, 'utf8');
